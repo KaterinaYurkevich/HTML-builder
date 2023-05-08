@@ -12,7 +12,7 @@ fs.promises.readdir(folderStyle, { withFileTypes: true })
         if (path.extname(prop.name) === '.css') {
           const stream = new fs.ReadStream(path.join(folderStyle, `/${prop.name}`));
 
-          stream.on('data', (chunk) => fileStyles.write(chunk));
+          stream.on('data', (data) => fileStyles.write(data));
         }
       }
     }
